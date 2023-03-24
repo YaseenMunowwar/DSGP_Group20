@@ -53,3 +53,8 @@ uiux_course = [['Google UX Design Professional Certificate','https://www.courser
                ['Adobe XD for Beginners [Free]','https://youtu.be/WEljsc2jorI'],
                ['Adobe XD in Simple Way','https://learnux.io/course/adobe-xd']]
 
+
+resume_videos = ['https://youtu.be/y8YH0Qbu5h4','https://youtu.be/J-4Fv8nq1iA',
+                 'https://youtu.be/yp693O87GmM','https://youtu.be/UeMmCex9uTU',
+                 'https://youtu.be/dQ7Q8ZdnuN0','https://youtu.be/HQqqQx5BCFY',
+                 'https://youtu.be/CLUsplI4xMU','https://youtu.be/pbczsLkv7Cc']
