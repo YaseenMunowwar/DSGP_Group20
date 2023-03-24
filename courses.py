@@ -20,3 +20,13 @@ web_course = [['Django Crash course [Free]','https://youtu.be/e1IyzVyrLSU'],
               ['Front End Web Developer by Udacity','https://www.udacity.com/course/front-end-web-developer-nanodegree--nd0011'],
               ['Become a React Developer by Udacity','https://www.udacity.com/course/react-nanodegree--nd019']]
 
+android_course = [['Android Development for Beginners [Free]','https://youtu.be/fis26HvvDII'],
+                  ['Android App Development Specialization','https://www.coursera.org/specializations/android-app-development'],
+                  ['Associate Android Developer Certification','https://grow.google/androiddev/#?modal_active=none'],
+                  ['Become an Android Kotlin Developer by Udacity','https://www.udacity.com/course/android-kotlin-developer-nanodegree--nd940'],
+                  ['Android Basics by Google','https://www.udacity.com/course/android-basics-nanodegree-by-google--nd803'],
+                  ['The Complete Android Developer Course','https://www.udemy.com/course/complete-android-n-developer-course/'],
+                  ['Building an Android App with Architecture Components','https://www.linkedin.com/learning/building-an-android-app-with-architecture-components'],
+                  ['Android App Development Masterclass using Kotlin','https://www.udemy.com/course/android-oreo-kotlin-app-masterclass/'],
+                  ['Flutter & Dart - The Complete Flutter App Development Course','https://www.udemy.com/course/flutter-dart-the-complete-flutter-app-development-course/'],
+                  ['Flutter App Development Course [Free]','https://youtu.be/rZLR5olMR64']]
