@@ -30,3 +30,14 @@ android_course = [['Android Development for Beginners [Free]','https://youtu.be/
                   ['Android App Development Masterclass using Kotlin','https://www.udemy.com/course/android-oreo-kotlin-app-masterclass/'],
                   ['Flutter & Dart - The Complete Flutter App Development Course','https://www.udemy.com/course/flutter-dart-the-complete-flutter-app-development-course/'],
                   ['Flutter App Development Course [Free]','https://youtu.be/rZLR5olMR64']]
+
+ios_course = [['IOS App Development by LinkedIn','https://www.linkedin.com/learning/subscription/topics/ios'],
+              ['iOS & Swift - The Complete iOS App Development Bootcamp','https://www.udemy.com/course/ios-13-app-development-bootcamp/'],
+              ['Become an iOS Developer','https://www.udacity.com/course/ios-developer-nanodegree--nd003'],
+              ['iOS App Development with Swift Specialization','https://www.coursera.org/specializations/app-development'],
+              ['Mobile App Development with Swift','https://www.edx.org/professional-certificate/curtinx-mobile-app-development-with-swift'],
+              ['Swift Course by LinkedIn','https://www.linkedin.com/learning/subscription/topics/swift-2'],
+              ['Objective-C Crash Course for Swift Developers','https://www.udemy.com/course/objectivec/'],
+              ['Learn Swift by Codecademy','https://www.codecademy.com/learn/learn-swift'],
+              ['Swift Tutorial - Full Course for Beginners [Free]','https://youtu.be/comQ1-x2a1Q'],
+              ['Learn Swift Fast - [Free]','https://youtu.be/FcsY1YPBwzQ']]
