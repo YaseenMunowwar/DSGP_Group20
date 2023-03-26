@@ -1,0 +1,140 @@
+import streamlit as st
+import pandas as pd
+import base64,random
+import time,datetime
+from pyresparser import ResumeParser
+from pdfminer3.layout import LAParams, LTTextBox
+from pdfminer3.pdfpage import PDFPage
+from pdfminer3.pdfinterp import PDFResourceManager
+from pdfminer3.pdfinterp import PDFPageInterpreter
+from pdfminer3.converter import TextConverter
+import io,random
+from streamlit_tags import st_tags
+from PIL import Image
+import pymysql
+
+
+### Resume score generation based on the Required skills and the skills the candidate has
+st.subheader("**Resume Score💡**")
+
+# The required skill sets for each job role
+data_scientist_required_skills = ['r', 'python', 'machine learning', 'deep learning', 'sql', 'nosql',
+                                  'statistics', 'big data analytics', 'artificial intelligence', 'java', 'rstudio',
+                                  'mathematics', 'hadoop', 'aws', 'cloud computing', 'data pipelines', 'sas',
+                                  'apache spark', 'pig', 'hive', 'google cloud platform ', 'html', 'css', 'javascript',
+                                  'data mining', 'data wrangling', 'data visualization', 'data analysis', 'data management',
+                                  'data mining', 'data processing', 'software development', 'algorithms',
+                                  'natural language processing', 'etl', 'perl', 'scala', 'mongodb',
+                                  'probability', 'tableau', 'power bi', 'qlikview', 'd3.js', 'git',
+                                  'knime', 'business', 'matlab', 'critical thinking', 'decision making',
+                                  'teamwork', 'leadership', 'problem solving', 'communication', 'adaptability']
+
+software_engineer_required_skills = ['oop', 'python', 'java', 'c++', 'csharp', 'ood', 'flask', 'html',
+                                     'css', 'javascript',  'flutter', 'javafx', 'machine learning', 'ruby',
+                                     'c', 'communication', 'leadership', 'scala', 'powershell', 'php',
+                                     'xml', 'react', 'angular', 'mongodb', 'mysql', 'nosql', 'git', 'junit', 'aws',
+                                     'google cloud platform', 'slack', 'trello', 'asana', 'jenkins', 'circlecl',
+                                     'visual studio code', 'maven', 'decision making', 'critical thinking',
+                                     'problem solving', 'gitlab', 'docker', 'kafka', 'postgresql', 'elasticsearch']
+
+uiux_developer_required_skills = ['ux', 'adobe xd', 'figma', 'zeplin', 'balsamiq', 'ui', 'prototyping',
+                                  'wireframes', 'storyframes', 'adobe photoshop', 'photoshop',
+                                  'editing', 'adobe illustrator', 'illustrator', 'adobe after effects',
+                                  'after effects', 'adobe premier pro', 'adobe indesign',
+                                  'indesign', 'wireframe', 'solid', 'grasp', 'user research', 'css', 'html',
+                                  'javascript', 'sketch', 'adobe xd', 'slack', 'asana', 'jira', 'hotjar',
+                                  'user experience']
+
+web_developer_required_skills = ['react', 'django', 'node jS', 'react js', 'php', 'laravel', 'magento',
+                                 'wordpress', 'javascript', 'angular js', 'c#', 'flask']
+
+mobile_app_developer_required_skills = ['android', 'android development', 'flutter', 'kotlin', 'xml',
+                                        'kivy', 'ios', 'ios development', 'swift', 'cocoa',
+                                        'cocoa touch', 'xcode']
+# Assigning the number of skills the candidate has and percentage resume score to zero initially
+number_of_skills = 0
+percentage_resume_score = 0
+# Finding the number of skills in the skill lists for each job role and assigning them to variables
+number_of_required_skills_data_scientist = len(data_scientist_required_skills)
+number_of_required_skills_software_engineer = len(software_engineer_required_skills)
+number_of_required_skills_uiux_developer = len(uiux_developer_required_skills)
+number_of_required_skills_web_developer = len(web_developer_required_skills)
+number_of_required_skills_mobile_app_developer = len(mobile_app_developer_required_skills)
+# Calculating the resume score percentage for each job role based on the required skills
+# data scientist job role score calculation
+if selected_field == 'Data Science':
+    # checking each skill extracted during the resume analysis
+    for skills in resume_data['skills']:
+        # checking whether the skill extracted from the resume is in the list of required skills for data science job role
+        if skills.lower() in data_scientist_required_skills:
+            # if so adding 1 to the number of skills
+            number_of_skills = number_of_skills + 1
+            # resume_score = resume_score + 5
+        else:
+            # if the skill is not in the list of the required skills continue
+            # resume_score = resume_score
+            number_of_skills = number_of_skills
+    # Calculating the percentage resume score
+    percentage_resume_score = (number_of_skills / number_of_required_skills_data_scientist) * 100
+
+# software engineer job role score calculation
+elif selected_field == 'Software Engineer':
+    # checking each skill extracted during the resume analysis
+    for skills in resume_data['skills']:
+        # checking whether the skill extracted from the resume is in the list of required skills for software engineer job role
+        if skills.lower() in software_engineer_required_skills:
+            # if so adding 1 to the number of skills
+            number_of_skills = number_of_skills + 1
+            # resume_score = resume_score + 5
+        else:
+            # if the skill is not in the list of the required skills continue
+            number_of_skills = number_of_skills
+            # resume_score = resume_score
+    # Calculating the percentage resume score
+    percentage_resume_score = (number_of_skills / number_of_required_skills_software_engineer) * 100
+# web developer job role score calculation
+elif selected_field == 'Web Development':
+    # checking each skill extracted during the resume analysis
+    for skills in resume_data['skills']:
+        # checking whether the skill extracted from the resume is in the list of required skills for web development job role
+        if skills.lower() in web_developer_required_skills:
+            # if so adding 1 to the number of skills
+            number_of_skills = number_of_skills + 1
+            # resume_score = resume_score + 5
+        else:
+            # if the skill is not in the list of the required skills continue
+            number_of_skills = number_of_skills
+            # resume_score = resume_score
+    # Calculating the percentage resume score
+    percentage_resume_score = (number_of_skills / number_of_required_skills_web_developer) * 100
+
+#  UI-UX Development job role score calculation
+elif selected_field == 'UI-UX Development':
+    # checking each skill extracted during the resume analysis
+    for skills in resume_data['skills']:
+        # checking whether the skill extracted from the resume is in the list of required skills for ui/ux development job role
+        if skills.lower() in uiux_developer_required_skills:
+            # if so adding 1 to the number of skills
+            number_of_skills = number_of_skills
+            # resume_score = resume_score + 5
+        else:
+            # if the skill is not in the list of the required skills continue
+            number_of_skills = number_of_skills
+            # resume_score = resume_score
+    # Calculating the percentage resume score
+    percentage_resume_score = (number_of_skills / number_of_required_skills_uiux_developer) * 100
+#  mobile app developer job role score calculation
+elif selected_field == 'Mobile-App Development':
+    # checking each skill extracted during the resume analysis
+    for j in resume_data['skills']:
+        # checking whether the skill extracted from the resume is in the list of required skills for mobile app development job role
+        if j.lower() in mobile_app_developer_required_skills:
+            # if so adding 1 to the number of skills
+            number_of_skills = number_of_skills + 1
+            # resume_score = resume_score + 5
+        else:
+            # if the skill is not in the list of the required skills continue
+            number_of_skills = number_of_skills
+            # resume_score = resume_score
+    # Calculating the percentage resume score
+    percentage_resume_score = (number_of_skills / number_of_required_skills_mobile_app_developer) * 100
