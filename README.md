@@ -1,1 +1,3 @@
 # DSGP_Group20
+# Personality and job suitability prediction through CV and LinkedIn profile analysis 
+The initial stages of recruitment and screening processes in IT organizations present several challenges, including the accuracy of resume information, the selection of the right candidate with the necessary skill set, the provision of proper feedback in case of termination, and the impact of the job on an employee's personality and overall suitability. These challenges require a comprehensive and well-planned approach to ensure the successful and efficient integration of new employees into the organization.
