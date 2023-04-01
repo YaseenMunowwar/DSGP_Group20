@@ -11,22 +11,19 @@ web_course = [['Django Crash course [Free]','https://youtu.be/e1IyzVyrLSU'],
               ['Front End Web Developer by Udacity','https://www.udacity.com/course/front-end-web-developer-nanodegree--nd0011'],
               ['Become a React Developer by Udacity','https://www.udacity.com/course/react-nanodegree--nd019']]
 
-android_course = [['Android Development for Beginners [Free]','https://youtu.be/fis26HvvDII'],
-                  ['Android App Development Specialization','https://www.coursera.org/specializations/android-app-development'],
-                  ['Associate Android Developer Certification','https://grow.google/androiddev/#?modal_active=none'],
-                  ['Become an Android Kotlin Developer by Udacity','https://www.udacity.com/course/android-kotlin-developer-nanodegree--nd940'],
-                  ['Android Basics by Google','https://www.udacity.com/course/android-basics-nanodegree-by-google--nd803'],
-                  ['The Complete Android Developer Course','https://www.udemy.com/course/complete-android-n-developer-course/'],
-                  ['Building an Android App with Architecture Components','https://www.linkedin.com/learning/building-an-android-app-with-architecture-components'],
-                  ['Android App Development Masterclass using Kotlin','https://www.udemy.com/course/android-oreo-kotlin-app-masterclass/'],
-                  ['Flutter & Dart - The Complete Flutter App Development Course','https://www.udemy.com/course/flutter-dart-the-complete-flutter-app-development-course/'],
-                  ['Flutter App Development Course [Free]','https://youtu.be/rZLR5olMR64']]
+android_course = [['Android Basics Nanodegree - Google: https://www.udacity.com/course/android-basics-nanodegree-by-google--nd803'],
+['Android Developer Fundamentals - Google: https://developer.android.com/courses/fundamentals-training/overview-v2'],
+['Android App Development Specialization - Coursera: https://www.coursera.org/specializations/android-app-development'],
+['Kotlin for Android - Udacity: https://www.udacity.com/course/kotlin-for-android-developers--ud888'],
+['Android Developer - Udacity: https://www.udacity.com/course/android-developer-nanodegree--nd801'],
+['Android Kotlin Fundamentals - Google: https://developer.android.com/courses/kotlin-android-fundamentals/overview'],
+['Android App Development - edX: https://www.edx.org/course/android-app-development]]']]
 
 ios_course = [['iOS App Development with Swift - Coursera: https://www.coursera.org/specializations/app-development'],
 ['Swift for Beginners - Udacity: https://www.udacity.com/course/swift-for-beginners--ud1022'],
 ['iOS Developer - Udacity: https://www.udacity.com/course/ios-developer-nanodegree--nd003'],
 ['Developing iOS 11 Apps with Swift - Stanford University: https://itunes.apple.com/us/course/developing-ios-11-apps-with-swift/id1309275316'],
-['iOS 11 & Swift 4 - The Complete iOS App Development Bootcamp - Udemy: https://www.udemy.com/course/ios-11-app-development-bootcamp/']
+['iOS 11 & Swift 4 - The Complete iOS App Development Bootcamp - Udemy: https://www.udemy.com/course/ios-11-app-development-bootcamp/'],
 ['The iOS 10 Developer Bootcamp - Udemy: https://www.udemy.com/course/the-ios-10-developer-bootcamp/'],
 ['Swift Programming - edX: https://www.edx.org/learn/swift-programming'],
 ['iOS App Development Essentials - Udacity: https://www.udacity.com/course/ios-app-development-essentials--ud009'],
