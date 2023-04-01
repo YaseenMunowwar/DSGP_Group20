@@ -64,6 +64,28 @@ def show_pdf(file_path):
     st.markdown(pdf_display, unsafe_allow_html=True)
 
 
+def get_table_download_link(df, filename, text):
+    """
+    Generates a link allowing the data in a given pandas dataframe to be downloaded as a CSV file
+    :param df: pandas dataframe to be downloaded
+    :param filename: filename to be used for the downloaded file
+    :param text: text to be used for the link
+    :return: href string for downloading the CSV file
+    """
+    # Convert the pandas dataframe to a CSV string
+    csv = df.to_csv(index=False)
+
+    # Encode the CSV string as base64
+    b64 = base64.b64encode(csv.encode()).decode()
+
+    # Create an HTML link with the base64-encoded CSV string as the href
+    # The link is given a filename and text to display on the page
+    href = f'<a href="data:file/csv;base64,{b64}" download="{filename}">{text}</a>'
+
+    # Return the HTML link
+    return href
+
+
 ### Resume score generation based on the Required skills and the skills the candidate has
 st.subheader("**Resume Score💡**")
 
