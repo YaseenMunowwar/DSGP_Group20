@@ -1,15 +1,19 @@
 ds_course = []
 
-web_course = [['Django Crash course [Free]','https://youtu.be/e1IyzVyrLSU'],
-              ['Python and Django Full Stack Web Developer Bootcamp','https://www.udemy.com/course/python-and-django-full-stack-web-developer-bootcamp'],
-              ['React Crash Course [Free]','https://youtu.be/Dorf8i6lCuk'],
-              ['ReactJS Project Development Training','https://www.dotnettricks.com/training/masters-program/reactjs-certification-training'],
-              ['Full Stack Web Developer - MEAN Stack','https://www.simplilearn.com/full-stack-web-developer-mean-stack-certification-training'],
-              ['Node.js and Express.js [Free]','https://youtu.be/Oe421EPjeBE'],
-              ['Flask: Develop Web Applications in Python','https://www.educative.io/courses/flask-develop-web-applications-in-python'],
-              ['Full Stack Web Developer by Udacity','https://www.udacity.com/course/full-stack-web-developer-nanodegree--nd0044'],
-              ['Front End Web Developer by Udacity','https://www.udacity.com/course/front-end-web-developer-nanodegree--nd0011'],
-              ['Become a React Developer by Udacity','https://www.udacity.com/course/react-nanodegree--nd019']]
+web_course = [['FreeCodeCamp: https://www.freecodecamp.org/'],
+['Codecademy: https://www.codecademy.com/'],
+['Udacity - Front End Web Developer Nanodegree: https://www.udacity.com/course/front-end-web-developer-nanodegree--nd0011'],
+['Coursera - Web Design for Everybody: Basics of Web Development & Coding: https://www.coursera.org/specializations/web-design'],
+['edX - Introduction to HTML5: https://www.edx.org/course/introduction-to-html5'],
+['W3Schools - Web development tutorials: https://www.w3schools.com/'],
+['The Odin Project - Web development curriculum: https://www.theodinproject.com/'],
+['Full Stack Open - University of Helsinki: https://fullstackopen.com/en/'],
+['The Complete Web Developer Course - Udemy: https://www.udemy.com/course/the-complete-web-developer-course-2/'],
+['Skillshare - Web Development courses: https://www.skillshare.com/browse/web-development'],
+['Mozilla Developer Network - Web development documentation and tutorials: https://developer.mozilla.org/en-US/docs/Learn'],
+['LinkedIn Learning - Web Development courses: https://www.linkedin.com/learning/topics/web-development'],
+['Treehouse - Web Development courses: https://teamtreehouse.com/tracks/web-development'],
+['Webflow University - Web Design and Development courses: https://university.webflow.com/']]
 
 android_course = [['Android Basics Nanodegree - Google: https://www.udacity.com/course/android-basics-nanodegree-by-google--nd803'],
 ['Android Developer Fundamentals - Google: https://developer.android.com/courses/fundamentals-training/overview-v2'],
