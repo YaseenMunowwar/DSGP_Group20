@@ -1,13 +1,4 @@
-ds_course = [['Machine Learning Crash Course by Google [Free]', 'https://developers.google.com/machine-learning/crash-course'],
-             ['Machine Learning A-Z by Udemy','https://www.udemy.com/course/machinelearning/'],
-             ['Machine Learning by Andrew NG','https://www.coursera.org/learn/machine-learning'],
-             ['Data Scientist Master Program of Simplilearn (IBM)','https://www.simplilearn.com/big-data-and-analytics/senior-data-scientist-masters-program-training'],
-             ['Data Science Foundations: Fundamentals by LinkedIn','https://www.linkedin.com/learning/data-science-foundations-fundamentals-5'],
-             ['Data Scientist with Python','https://www.datacamp.com/tracks/data-scientist-with-python'],
-             ['Programming for Data Science with Python','https://www.udacity.com/course/programming-for-data-science-nanodegree--nd104'],
-             ['Programming for Data Science with R','https://www.udacity.com/course/programming-for-data-science-nanodegree-with-R--nd118'],
-             ['Introduction to Data Science','https://www.udacity.com/course/introduction-to-data-science--cd0017'],
-             ['Intro to Machine Learning with TensorFlow','https://www.udacity.com/course/intro-to-machine-learning-with-tensorflow-nanodegree--nd230']]
+ds_course = []
 
 web_course = [['Django Crash course [Free]','https://youtu.be/e1IyzVyrLSU'],
               ['Python and Django Full Stack Web Developer Bootcamp','https://www.udemy.com/course/python-and-django-full-stack-web-developer-bootcamp'],
@@ -42,13 +33,17 @@ ios_course = [['IOS App Development by LinkedIn','https://www.linkedin.com/learn
               ['Swift Tutorial - Full Course for Beginners [Free]','https://youtu.be/comQ1-x2a1Q'],
               ['Learn Swift Fast - [Free]','https://youtu.be/FcsY1YPBwzQ']]
 
-uiux_course = [['Google UX Design Professional Certificate','https://www.coursera.org/professional-certificates/google-ux-design'],
-               ['UI / UX Design Specialization','https://www.coursera.org/specializations/ui-ux-design'],
-               ['The Complete App Design Course - UX, UI and Design Thinking','https://www.udemy.com/course/the-complete-app-design-course-ux-and-ui-design/'],
-               ['UX & Web Design Master Course: Strategy, Design, Development','https://www.udemy.com/course/ux-web-design-master-course-strategy-design-development/'],
-               ['The Complete App Design Course - UX, UI and Design Thinking','https://www.udemy.com/course/the-complete-app-design-course-ux-and-ui-design/'],
-               ['DESIGN RULES: Principles + Practices for Great UI Design','https://www.udemy.com/course/design-rules/'],
-               ['Become a UX Designer by Udacity','https://www.udacity.com/course/ux-designer-nanodegree--nd578'],
-               ['Adobe XD Tutorial: User Experience Design Course [Free]','https://youtu.be/68w2VwalD5w'],
-               ['Adobe XD for Beginners [Free]','https://youtu.be/WEljsc2jorI'],
-               ['Adobe XD in Simple Way','https://learnux.io/course/adobe-xd']]
+uiux_course = [['Interaction Design Foundation (https://www.interaction-design.org/)'],
+['Udemy UI/UX Design Courses (https://www.udemy.com/topic/ui-ux-design/)'],
+['Coursera UI/UX Design Courses (https://www.coursera.org/courses?query=ui%2Fux%20design)'],
+['Skillshare UI/UX Design Courses (https://www.skillshare.com/browse/ui-ux-design)'],
+['LinkedIn Learning UI/UX Design Courses (https://www.linkedin.com/learning/topics/ui-ux-design)'],
+['Hack Design (https://hackdesign.org/) Treehouse UI/UX Design Courses (https://teamtreehouse.com/tracks/user-experience-design)'],
+['Smashing Magazine (https://www.smashingmagazine.com/)'],
+['DesignLab (https://trydesignlab.com/)'],
+['The Futur (https://www.thefutur.com/)'],
+['Google Design (https://design.google/education/)'],
+['Springboard UI/UX Design Course (https://www.springboard.com/courses/ui-ux-design-career-track/)'],
+['UX Mastery (https://uxmastery.com/)'],
+['Learn UI Design (https://learnui.design/)'],
+['Human Factors International (https://www.humanfactors.com/)']]
