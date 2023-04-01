@@ -1,3 +1,6 @@
+#DSGP Group 20 - Personality and job suitability prediction through CV and LinkedIn profile analysis
+
+#Importing the relvant packages and libraries
 import streamlit as st
 import pandas as pd
 import base64,random
@@ -12,6 +15,41 @@ import io,random
 from streamlit_tags import st_tags
 from PIL import Image
 import pymysql
+from courses import ds_course,web_course,android_course,ios_course,uiux_course,resume_videos,interview_videos
+import plotly.express as px
+
+######################################### CREATING AND DEFINING FUNCTIONS ########################################
+def pdf_reader(file):
+    # Create a PDF resource manager to store shared resources
+    resource_manager = PDFResourceManager()
+
+    # Create a StringIO object to hold the text content of the PDF
+    fake_file_handle = io.StringIO()
+
+    # Create a TextConverter object to convert PDF pages to text
+    # Pass in the PDF resource manager, the StringIO object, and some layout parameters
+    converter = TextConverter(resource_manager, fake_file_handle, laparams=LAParams())
+
+    # Create a PDF page interpreter to interpret PDF pages
+    # Pass in the PDF resource manager and the TextConverter object
+    page_interpreter = PDFPageInterpreter(resource_manager, converter)
+
+    # Open the PDF file in binary read mode and loop through each page
+    with open(file, 'rb') as fh:
+        # Loop through each page in the PDF
+        for page in PDFPage.get_pages(fh, caching=True, check_extractable=True):
+            # Process each PDF page with the page interpreter
+            page_interpreter.process_page(page)
+
+        # Retrieve the text content of the PDF from the StringIO object
+        text = fake_file_handle.getvalue()
+
+    # Close the converter and StringIO objects
+    converter.close()
+    fake_file_handle.close()
+
+    # Return the text content of the PDF
+    return text
 
 
 ### Resume score generation based on the Required skills and the skills the candidate has
