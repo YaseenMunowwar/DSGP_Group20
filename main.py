@@ -85,6 +85,24 @@ def get_table_download_link(df, filename, text):
     # Return the HTML link
     return href
 
+def insert_data(name, email, res_score, timestamp, no_of_pages, reco_field, cand_level, skills, recommended_skills,courses):
+    'Function to insert user data into the user_data database table'
+
+    # Define the name of the database table where the data will be stored
+    DB_table_name = 'user_data'
+
+    # Define the SQL statement for inserting the data into the table
+    insert_sql = "insert into " + DB_table_name + """ values (0,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)""" #Make sure to add 2 new columns for score and personality
+
+    # Create a tuple of values to be inserted into the table
+    rec_values = (
+    name, email, str(res_score), timestamp, str(no_of_pages), reco_field, cand_level, skills, recommended_skills,
+    courses)
+
+    # Execute the SQL statement and commit the changes to the database
+    cursor.execute(insert_sql, rec_values)
+    connection.commit()
+    
 
 ### Resume score generation based on the Required skills and the skills the candidate has
 st.subheader("**Resume Score💡**")
