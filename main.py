@@ -147,6 +147,16 @@ def skill_percentage(required_skills,all_skills):
     st.write(f"The candidate has {percentage:.2f}% of the required skills.")
     return percentage;
 
+def skill_recommender(required_skills,all_skills):
+    'Function to recommend skills analyzing the available skills'
+    recommended_skills = []
+    for skill in required_skills:
+        skill = skill.lower()
+        if skill in all_skills:
+            pass
+        else:
+            recommended_skills.append(skill)
+    return recommended_skills
 
 ### Resume score generation based on the Required skills and the skills the candidate has
 st.subheader("**Resume Score💡**")
