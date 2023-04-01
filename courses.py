@@ -1,4 +1,18 @@
-ds_course = []
+
+ds_course = [['https://www.coursera.org/specializations/jhu-data-science'],
+['edX - Data Science Essentials: https://www.edx.org/course/data-science-essentials'],
+['Udemy - Complete Data Science Bootcamp: https://www.udemy.com/course/complete-data-science-bootcamp/'],
+['DataCamp - Data Science courses: https://www.datacamp.com/courses/data-science'],
+['Khan Academy - Statistics and Probability: https://www.khanacademy.org/math/statistics-probability'],
+['IBM Data Science Professional Certificate: https://www.coursera.org/professional-certificates/ibm-data-science'],
+['HarvardX Data Science Certificate: https://www.edx.org/professional-certificate/harvardx-data-science'],
+['Stanford University - Machine Learning: https://www.coursera.org/learn/machine-learning'],
+['MIT - Introduction to Computational Thinking and Data Science: https://www.edx.org/course/introduction-to-computational-thinking-and-data-4'],
+['Kaggle - Data Science courses: https://www.kaggle.com/learn/overview'],
+['Google - Data Analytics Professional Certificate: https://www.coursera.org/professional-certificates/google-data-analytics'],
+['Microsoft - Data Science Essentials: https://www.edx.org/course/data-science-essentials-microsoft-dat203-1x-3'],
+['Dataquest - Data Science courses: https://www.dataquest.io/'],
+['University of Michigan - Applied Data Science with Python Specialization: https://www.coursera.org/specializations/data-science-python']]
 
 web_course = [['FreeCodeCamp: https://www.freecodecamp.org/'],
 ['Codecademy: https://www.codecademy.com/'],
