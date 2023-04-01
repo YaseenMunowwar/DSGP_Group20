@@ -1,4 +1,5 @@
 #Courses links
+#Data Science courses
 ds_course = [['https://www.coursera.org/specializations/jhu-data-science'],
 ['edX - Data Science Essentials: https://www.edx.org/course/data-science-essentials'],
 ['Udemy - Complete Data Science Bootcamp: https://www.udemy.com/course/complete-data-science-bootcamp/'],
@@ -14,6 +15,7 @@ ds_course = [['https://www.coursera.org/specializations/jhu-data-science'],
 ['Dataquest - Data Science courses: https://www.dataquest.io/'],
 ['University of Michigan - Applied Data Science with Python Specialization: https://www.coursera.org/specializations/data-science-python']]
 
+#Web courses links
 web_course = [['FreeCodeCamp: https://www.freecodecamp.org/'],
 ['Codecademy: https://www.codecademy.com/'],
 ['Udacity - Front End Web Developer Nanodegree: https://www.udacity.com/course/front-end-web-developer-nanodegree--nd0011'],
@@ -29,6 +31,7 @@ web_course = [['FreeCodeCamp: https://www.freecodecamp.org/'],
 ['Treehouse - Web Development courses: https://teamtreehouse.com/tracks/web-development'],
 ['Webflow University - Web Design and Development courses: https://university.webflow.com/']]
 
+#Android Courses Links
 android_course = [['Android Basics Nanodegree - Google: https://www.udacity.com/course/android-basics-nanodegree-by-google--nd803'],
 ['Android Developer Fundamentals - Google: https://developer.android.com/courses/fundamentals-training/overview-v2'],
 ['Android App Development Specialization - Coursera: https://www.coursera.org/specializations/android-app-development'],
@@ -37,6 +40,7 @@ android_course = [['Android Basics Nanodegree - Google: https://www.udacity.com/
 ['Android Kotlin Fundamentals - Google: https://developer.android.com/courses/kotlin-android-fundamentals/overview'],
 ['Android App Development - edX: https://www.edx.org/course/android-app-development]]']]
 
+#Ios Courses links
 ios_course = [['iOS App Development with Swift - Coursera: https://www.coursera.org/specializations/app-development'],
 ['Swift for Beginners - Udacity: https://www.udacity.com/course/swift-for-beginners--ud1022'],
 ['iOS Developer - Udacity: https://www.udacity.com/course/ios-developer-nanodegree--nd003'],
@@ -52,6 +56,7 @@ ios_course = [['iOS App Development with Swift - Coursera: https://www.coursera.
 ['iOS Development for Creative Entrepreneurs - Skillshare: https://www.skillshare.com/classes/iOS-Development-for-Creative-Entrepreneurs/806315722'],
 ['iOS Development with Swift - Pluralsight: https://www.pluralsight.com/paths/ios-development-with-swift']]
 
+#UI/UX courses Links
 uiux_course = [['Interaction Design Foundation (https://www.interaction-design.org/)'],
 ['Udemy UI/UX Design Courses (https://www.udemy.com/topic/ui-ux-design/)'],
 ['Coursera UI/UX Design Courses (https://www.coursera.org/courses?query=ui%2Fux%20design)'],
