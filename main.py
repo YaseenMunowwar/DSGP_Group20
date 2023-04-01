@@ -84,7 +84,36 @@ def get_table_download_link(df, filename, text):
 
     # Return the HTML link
     return href
+def course_recommender(course_list):
+    'Function to suggest relevant courses'
+    # Add a subheading for the course recommendations
+    st.subheader("*Courses & Certificates🎓 Recommendations*")
 
+    # Initialize a counter and an empty list for the recommended courses
+    c = 0
+    rec_course = []
+
+    # Display a slider for the user to choose the number of course recommendations
+    no_of_reco = st.slider('Choose Number of Course Recommendations:', 1, 10, 4)
+
+    # Shuffle the list of courses randomly
+    random.shuffle(course_list)
+
+    # Iterate over the list of courses and display the recommended courses
+    for c_name, c_link in course_list:
+        c += 1
+        # Display the name and link for each course
+        st.markdown(f"({c}) [{c_name}]({c_link})")
+
+        # Add the name of the recommended course to the list of recommended courses
+        rec_course.append(c_name)
+
+        # Break the loop when the desired number of recommendations has been displayed
+        if c == no_of_reco:
+            break
+
+    # Return the list of recommended courses
+    return rec_course
 def insert_data(name, email, res_score, timestamp, no_of_pages, reco_field, cand_level, skills, recommended_skills,courses):
     'Function to insert user data into the user_data database table'
 
@@ -159,10 +188,9 @@ if selected_field == 'Data Science':
         if skills.lower() in data_scientist_required_skills:
             # if so adding 1 to the number of skills
             number_of_skills = number_of_skills + 1
-            # resume_score = resume_score + 5
+
         else:
             # if the skill is not in the list of the required skills continue
-            # resume_score = resume_score
             number_of_skills = number_of_skills
     # Calculating the percentage resume score
     percentage_resume_score = (number_of_skills / number_of_required_skills_data_scientist) * 100
@@ -175,11 +203,9 @@ elif selected_field == 'Software Engineer':
         if skills.lower() in software_engineer_required_skills:
             # if so adding 1 to the number of skills
             number_of_skills = number_of_skills + 1
-            # resume_score = resume_score + 5
         else:
             # if the skill is not in the list of the required skills continue
             number_of_skills = number_of_skills
-            # resume_score = resume_score
     # Calculating the percentage resume score
     percentage_resume_score = (number_of_skills / number_of_required_skills_software_engineer) * 100
 # web developer job role score calculation
@@ -190,11 +216,9 @@ elif selected_field == 'Web Development':
         if skills.lower() in web_developer_required_skills:
             # if so adding 1 to the number of skills
             number_of_skills = number_of_skills + 1
-            # resume_score = resume_score + 5
         else:
             # if the skill is not in the list of the required skills continue
             number_of_skills = number_of_skills
-            # resume_score = resume_score
     # Calculating the percentage resume score
     percentage_resume_score = (number_of_skills / number_of_required_skills_web_developer) * 100
 
@@ -206,11 +230,9 @@ elif selected_field == 'UI-UX Development':
         if skills.lower() in uiux_developer_required_skills:
             # if so adding 1 to the number of skills
             number_of_skills = number_of_skills
-            # resume_score = resume_score + 5
         else:
             # if the skill is not in the list of the required skills continue
             number_of_skills = number_of_skills
-            # resume_score = resume_score
     # Calculating the percentage resume score
     percentage_resume_score = (number_of_skills / number_of_required_skills_uiux_developer) * 100
 #  mobile app developer job role score calculation
@@ -221,10 +243,8 @@ elif selected_field == 'Mobile-App Development':
         if j.lower() in mobile_app_developer_required_skills:
             # if so adding 1 to the number of skills
             number_of_skills = number_of_skills + 1
-            # resume_score = resume_score + 5
         else:
             # if the skill is not in the list of the required skills continue
             number_of_skills = number_of_skills
-            # resume_score = resume_score
     # Calculating the percentage resume score
     percentage_resume_score = (number_of_skills / number_of_required_skills_mobile_app_developer) * 100
