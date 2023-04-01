@@ -84,6 +84,7 @@ def get_table_download_link(df, filename, text):
 
     # Return the HTML link
     return href
+
 def course_recommender(course_list):
     'Function to suggest relevant courses'
     # Add a subheading for the course recommendations
@@ -114,6 +115,8 @@ def course_recommender(course_list):
 
     # Return the list of recommended courses
     return rec_course
+
+
 def insert_data(name, email, res_score, timestamp, no_of_pages, reco_field, cand_level, skills, recommended_skills,courses):
     'Function to insert user data into the user_data database table'
 
@@ -132,6 +135,38 @@ def insert_data(name, email, res_score, timestamp, no_of_pages, reco_field, cand
     cursor.execute(insert_sql, rec_values)
     connection.commit()
     
+def skill_percentage(required_skills,all_skills):
+    'Function to generate a percentage of the candidates skills'
+    num_skills = 0
+    for skill in required_skills:
+        skill = skill.lower()
+        if skill in all_skills:
+            num_skills += 1
+    percentage = num_skills / len(required_skills) * 100
+    print(f"The candidate has {percentage:.2f}% of the required skills.")
+    st.write(f"The candidate has {percentage:.2f}% of the required skills.")
+    return percentage;
+
+def skill_recommender(required_skills,all_skills):
+    'Function to recommend skills analyzing the available skills'
+    recommended_skills = []
+    for skill in required_skills:
+        skill = skill.lower()
+        if skill in all_skills:
+            pass
+        else:
+            recommended_skills.append(skill)
+    return recommended_skills
+
+def score_visualizer(resume_score):
+    'Function to visualize the score bar'
+    resume_score = int(resume_score)
+    my_bar = st.progress(0)
+    score = 0
+    for percent_complete in range(resume_score):
+        score += 1
+        time.sleep(0.1)
+        my_bar.progress(percent_complete + 1)
 
 ### Resume score generation based on the Required skills and the skills the candidate has
 st.subheader("**Resume Score💡**")
