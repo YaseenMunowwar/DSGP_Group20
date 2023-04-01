@@ -158,6 +158,16 @@ def skill_recommender(required_skills,all_skills):
             recommended_skills.append(skill)
     return recommended_skills
 
+def score_visualizer(resume_score):
+    'Function to visualize the score bar'
+    resume_score = int(resume_score)
+    my_bar = st.progress(0)
+    score = 0
+    for percent_complete in range(resume_score):
+        score += 1
+        time.sleep(0.1)
+        my_bar.progress(percent_complete + 1)
+
 ### Resume score generation based on the Required skills and the skills the candidate has
 st.subheader("**Resume Score💡**")
 
