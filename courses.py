@@ -22,16 +22,21 @@ android_course = [['Android Development for Beginners [Free]','https://youtu.be/
                   ['Flutter & Dart - The Complete Flutter App Development Course','https://www.udemy.com/course/flutter-dart-the-complete-flutter-app-development-course/'],
                   ['Flutter App Development Course [Free]','https://youtu.be/rZLR5olMR64']]
 
-ios_course = [['IOS App Development by LinkedIn','https://www.linkedin.com/learning/subscription/topics/ios'],
-              ['iOS & Swift - The Complete iOS App Development Bootcamp','https://www.udemy.com/course/ios-13-app-development-bootcamp/'],
-              ['Become an iOS Developer','https://www.udacity.com/course/ios-developer-nanodegree--nd003'],
-              ['iOS App Development with Swift Specialization','https://www.coursera.org/specializations/app-development'],
-              ['Mobile App Development with Swift','https://www.edx.org/professional-certificate/curtinx-mobile-app-development-with-swift'],
-              ['Swift Course by LinkedIn','https://www.linkedin.com/learning/subscription/topics/swift-2'],
-              ['Objective-C Crash Course for Swift Developers','https://www.udemy.com/course/objectivec/'],
-              ['Learn Swift by Codecademy','https://www.codecademy.com/learn/learn-swift'],
-              ['Swift Tutorial - Full Course for Beginners [Free]','https://youtu.be/comQ1-x2a1Q'],
-              ['Learn Swift Fast - [Free]','https://youtu.be/FcsY1YPBwzQ']]
+ios_course = [['iOS App Development with Swift - Coursera: https://www.coursera.org/specializations/app-development'],
+['Swift for Beginners - Udacity: https://www.udacity.com/course/swift-for-beginners--ud1022'],
+['iOS Developer - Udacity: https://www.udacity.com/course/ios-developer-nanodegree--nd003'],
+['Developing iOS 11 Apps with Swift - Stanford University: https://itunes.apple.com/us/course/developing-ios-11-apps-with-swift/id1309275316'],
+['iOS 11 & Swift 4 - The Complete iOS App Development Bootcamp - Udemy: https://www.udemy.com/course/ios-11-app-development-bootcamp/']
+['The iOS 10 Developer Bootcamp - Udemy: https://www.udemy.com/course/the-ios-10-developer-bootcamp/'],
+['Swift Programming - edX: https://www.edx.org/learn/swift-programming'],
+['iOS App Development Essentials - Udacity: https://www.udacity.com/course/ios-app-development-essentials--ud009'],
+['iOS Development - Codecademy: https://www.codecademy.com/learn/learn-ios'],
+['The Complete iOS 14 App Development Course - Udemy: https://www.udemy.com/course/the-complete-ios-14-app-development-course/'],
+['iOS Development with Swift - LinkedIn Learning: https://www.linkedin.com/learning/ios-development-with-swift'],
+['Mastering iOS Development - Treehouse: https://teamtreehouse.com/tracks/ios-development'],
+['iOS Development for Creative Entrepreneurs - Skillshare: https://www.skillshare.com/classes/iOS-Development-for-Creative-Entrepreneurs/806315722'],
+['iOS Development with Swift - Pluralsight: https://www.pluralsight.com/paths/ios-development-with-swift']
+]
 
 uiux_course = [['Interaction Design Foundation (https://www.interaction-design.org/)'],
 ['Udemy UI/UX Design Courses (https://www.udemy.com/topic/ui-ux-design/)'],
