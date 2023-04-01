@@ -51,6 +51,18 @@ def pdf_reader(file):
     # Return the text content of the PDF
     return text
 
+def show_pdf(file_path):
+    # Open the PDF file in binary read mode
+    with open(file_path, "rb") as f:
+        # Read the contents of the file and encode it as base64
+        base64_pdf = base64.b64encode(f.read()).decode('utf-8')
+
+    # Embed the base64-encoded PDF in an HTML iframe element
+    pdf_display = F'<iframe src="data:application/pdf;base64,{base64_pdf}" width="500" height="700" type="application/pdf"></iframe>'
+
+    # Display the PDF in Streamlit using the HTML iframe element
+    st.markdown(pdf_display, unsafe_allow_html=True)
+
 
 ### Resume score generation based on the Required skills and the skills the candidate has
 st.subheader("**Resume Score💡**")
