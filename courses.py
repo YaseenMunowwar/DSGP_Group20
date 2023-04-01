@@ -50,8 +50,7 @@ ios_course = [['iOS App Development with Swift - Coursera: https://www.coursera.
 ['iOS Development with Swift - LinkedIn Learning: https://www.linkedin.com/learning/ios-development-with-swift'],
 ['Mastering iOS Development - Treehouse: https://teamtreehouse.com/tracks/ios-development'],
 ['iOS Development for Creative Entrepreneurs - Skillshare: https://www.skillshare.com/classes/iOS-Development-for-Creative-Entrepreneurs/806315722'],
-['iOS Development with Swift - Pluralsight: https://www.pluralsight.com/paths/ios-development-with-swift']
-]
+['iOS Development with Swift - Pluralsight: https://www.pluralsight.com/paths/ios-development-with-swift']]
 
 uiux_course = [['Interaction Design Foundation (https://www.interaction-design.org/)'],
 ['Udemy UI/UX Design Courses (https://www.udemy.com/topic/ui-ux-design/)'],
