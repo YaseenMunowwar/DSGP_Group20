@@ -41,24 +41,16 @@ Mobile_Development_courses = [['Android Basics Nanodegree - Google: https://www.
 ['Android App Development - edX: https://www.edx.org/course/android-app-development]]']]
 
 #Software Engineering Courses
-software_engineering_courses = [['LinkedIn Learning: https://www.linkedin.com/learning/topics/software-development?trk=nav_neptune_learning
-
-['Pluralsight: https://www.pluralsight.com/browse/software-development
-
-['Khan Academy: https://www.khanacademy.org/computing/computer-programming
-
-['MIT OpenCourseWare: https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/
-
-['Harvard Extension School: https://www.extension.harvard.edu/academics/courses/computer-science
-['Coursera: https://www.coursera.org/courses?query=software%20engineering
-
-['edX: https://www.edx.org/learn/software-engineering
-
-['Udacity: https://www.udacity.com/school-of-programming
-
-['Codecademy: https://www.codecademy.com/catalog/subject/web-development
-
-['FreeCodeCamp: https://www.freecodecamp.org/learn/
+software_engineering_courses = [['LinkedIn Learning: https://www.linkedin.com/learning/topics/software-development?trk=nav_neptune_learning'],
+['Pluralsight: https://www.pluralsight.com/browse/software-development'],
+['Khan Academy: https://www.khanacademy.org/computing/computer-programming'],
+['MIT OpenCourseWare: https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/m'],
+['Harvard Extension School: https://www.extension.harvard.edu/academics/courses/computer-science'],
+['Coursera: https://www.coursera.org/courses?query=software%20engineering'],
+['edX: https://www.edx.org/learn/software-engineering'],
+['Udacity: https://www.udacity.com/school-of-programming'],
+['Codecademy: https://www.codecademy.com/catalog/subject/web-development'],
+['FreeCodeCamp: https://www.freecodecamp.org/learn/']]
 
 #UI/UX courses Links
 uiux_course = [['Interaction Design Foundation (https://www.interaction-design.org/)'],
