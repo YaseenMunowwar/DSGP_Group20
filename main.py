@@ -125,7 +125,12 @@ def course_reco(course_df):
     c = 0
     rec_course = []
 
-
+    # Add filters to the course dataframe
+    category = st.multiselect('Select categories:', course_df['category'].unique())
+    course_df = course_df[course_df['category'].isin(category)]
+    difficulty = st.multiselect('Select difficulty levels:', course_df['difficulty'].unique())
+    course_df = course_df[course_df['difficulty'].isin(difficulty)]
+    # You can add more filters as per your requirement.
 
     # Display a slider for the user to choose the number of course recommendations
     no_of_reco = st.slider('Choose Number of Course Recommendations:', 1, 10, 4)
