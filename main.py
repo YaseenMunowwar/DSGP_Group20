@@ -116,7 +116,35 @@ def course_recommender(course_list):
     # Return the list of recommended courses
     return rec_course
 
+def course_reco(course_df):
+    #Function to suggest relevant courses
+    # Add a subheading for the course recommendations
+    st.subheader("*Courses & Certificates🎓 Recommendations*")
 
+    # Initialize a counter and an empty list for the recommended courses
+    c = 0
+    rec_course = []
+
+
+
+    # Display a slider for the user to choose the number of course recommendations
+    no_of_reco = st.slider('Choose Number of Course Recommendations:', 1, 10, 4)
+
+    # Shuffle the filtered dataframe randomly
+    course_df = course_df.sample(frac=1).reset_index(drop=True)
+
+    # Iterate over the filtered dataframe and display the recommended courses
+    for i in range(no_of_reco):
+        # Display the name and link for each course
+        c_name = course_df['name'][i]
+        c_link = course_df['link'][i]
+        st.markdown(f"({i+1}) [{c_name}]({c_link})")
+
+        # Add the name of the recommended course to the list of recommended courses
+        rec_course.append(c_name)
+
+    # Return the list of recommended courses
+    return rec_course
 def insert_data(name, email, res_score, timestamp, no_of_pages, reco_field, cand_level, skills, recommended_skills,courses):
     'Function to insert user data into the user_data database table'
 
