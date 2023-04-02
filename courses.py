@@ -31,8 +31,8 @@ web_course = [['FreeCodeCamp: https://www.freecodecamp.org/'],
 ['Treehouse - Web Development courses: https://teamtreehouse.com/tracks/web-development'],
 ['Webflow University - Web Design and Development courses: https://university.webflow.com/']]
 
-#Android Courses Links
-android_course = [['Android Basics Nanodegree - Google: https://www.udacity.com/course/android-basics-nanodegree-by-google--nd803'],
+#Mobile Development Courses Links
+Mobile_Development_courses = [['Android Basics Nanodegree - Google: https://www.udacity.com/course/android-basics-nanodegree-by-google--nd803'],
 ['Android Developer Fundamentals - Google: https://developer.android.com/courses/fundamentals-training/overview-v2'],
 ['Android App Development Specialization - Coursera: https://www.coursera.org/specializations/android-app-development'],
 ['Kotlin for Android - Udacity: https://www.udacity.com/course/kotlin-for-android-developers--ud888'],
@@ -40,21 +40,25 @@ android_course = [['Android Basics Nanodegree - Google: https://www.udacity.com/
 ['Android Kotlin Fundamentals - Google: https://developer.android.com/courses/kotlin-android-fundamentals/overview'],
 ['Android App Development - edX: https://www.edx.org/course/android-app-development]]']]
 
-#Ios Courses links
-ios_course = [['iOS App Development with Swift - Coursera: https://www.coursera.org/specializations/app-development'],
-['Swift for Beginners - Udacity: https://www.udacity.com/course/swift-for-beginners--ud1022'],
-['iOS Developer - Udacity: https://www.udacity.com/course/ios-developer-nanodegree--nd003'],
-['Developing iOS 11 Apps with Swift - Stanford University: https://itunes.apple.com/us/course/developing-ios-11-apps-with-swift/id1309275316'],
-['iOS 11 & Swift 4 - The Complete iOS App Development Bootcamp - Udemy: https://www.udemy.com/course/ios-11-app-development-bootcamp/'],
-['The iOS 10 Developer Bootcamp - Udemy: https://www.udemy.com/course/the-ios-10-developer-bootcamp/'],
-['Swift Programming - edX: https://www.edx.org/learn/swift-programming'],
-['iOS App Development Essentials - Udacity: https://www.udacity.com/course/ios-app-development-essentials--ud009'],
-['iOS Development - Codecademy: https://www.codecademy.com/learn/learn-ios'],
-['The Complete iOS 14 App Development Course - Udemy: https://www.udemy.com/course/the-complete-ios-14-app-development-course/'],
-['iOS Development with Swift - LinkedIn Learning: https://www.linkedin.com/learning/ios-development-with-swift'],
-['Mastering iOS Development - Treehouse: https://teamtreehouse.com/tracks/ios-development'],
-['iOS Development for Creative Entrepreneurs - Skillshare: https://www.skillshare.com/classes/iOS-Development-for-Creative-Entrepreneurs/806315722'],
-['iOS Development with Swift - Pluralsight: https://www.pluralsight.com/paths/ios-development-with-swift']]
+#Software Engineering Courses
+software_engineering_courses = [['LinkedIn Learning: https://www.linkedin.com/learning/topics/software-development?trk=nav_neptune_learning
+
+['Pluralsight: https://www.pluralsight.com/browse/software-development
+
+['Khan Academy: https://www.khanacademy.org/computing/computer-programming
+
+['MIT OpenCourseWare: https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/
+
+['Harvard Extension School: https://www.extension.harvard.edu/academics/courses/computer-science
+['Coursera: https://www.coursera.org/courses?query=software%20engineering
+
+['edX: https://www.edx.org/learn/software-engineering
+
+['Udacity: https://www.udacity.com/school-of-programming
+
+['Codecademy: https://www.codecademy.com/catalog/subject/web-development
+
+['FreeCodeCamp: https://www.freecodecamp.org/learn/
 
 #UI/UX courses Links
 uiux_course = [['Interaction Design Foundation (https://www.interaction-design.org/)'],
@@ -71,3 +75,4 @@ uiux_course = [['Interaction Design Foundation (https://www.interaction-design.o
 ['UX Mastery (https://uxmastery.com/)'],
 ['Learn UI Design (https://learnui.design/)'],
 ['Human Factors International (https://www.humanfactors.com/)']]
+
