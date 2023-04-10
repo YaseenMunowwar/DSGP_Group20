@@ -506,7 +506,7 @@ def normal_user():
         connection.commit()
         st.write ('Commited to database successfully!')
 
-        
+
 def run():
     # Set the page background color and style
     page_bg_img = '''
@@ -594,3 +594,9 @@ def run():
             else:
                 st.error("Wrong ID & Password Provided")
 
+#Establishing mysql database connection
+connection = pymysql.connect(host='localhost',user='root',password='',db='sra')
+cursor = connection.cursor()
+run()
+
+#Run the program using py --m streamlit run main.py
