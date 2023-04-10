@@ -505,3 +505,92 @@ def normal_user():
         print(timestamp)
         connection.commit()
         st.write ('Commited to database successfully!')
+
+        
+def run():
+    # Set the page background color and style
+    page_bg_img = '''
+    <style>
+    body {
+    background-image: url("Logo/cv zone.png");
+    background-size: cover;
+    }
+    </style>
+    '''
+
+    st.markdown(page_bg_img, unsafe_allow_html=True)
+    st.title("CV ZONE")
+    st.sidebar.markdown("# Choose User")
+    activities = ["Normal User", "Admin"]
+    choice = st.sidebar.selectbox("Choose among the given options:", activities)
+
+    # job_role_selection()
+
+    # Create the DB
+    db_sql = """CREATE DATABASE IF NOT EXISTS SRA;"""
+    cursor.execute(db_sql)
+
+    # Create table
+    DB_table_name = 'user_info'
+    table_sql = "CREATE TABLE IF NOT EXISTS " + DB_table_name + """
+                    (ID INT NOT NULL AUTO_INCREMENT,
+                     Name varchar(100) NOT NULL,
+                     Email_ID VARCHAR(50) NOT NULL,
+                     resume_score VARCHAR(8) NOT NULL,
+                     Timestamp VARCHAR(50) NOT NULL,
+                     Page_no VARCHAR(5) NOT NULL,
+                     Predicted_Field VARCHAR(25) NOT NULL,
+                     User_level VARCHAR(30) NOT NULL,
+                     Actual_skills VARCHAR(300) NOT NULL,
+                     Recommended_skills VARCHAR(300) NOT NULL,
+                     Recommended_courses VARCHAR(600) NOT NULL,
+                     Predicted_Personality VARCHAR(20) NOT NULL,
+                     PRIMARY KEY (ID));
+                    """
+    cursor.execute(table_sql)
+    if choice == 'Normal User':
+        normal_user()
+
+    else:
+        ## Admin Side
+        st.success('Welcome back Admin')
+
+        ad_user = st.text_input("Username").lower()
+        ad_password = st.text_input("Password", type='password')
+        if st.button('Login'):
+            if ad_user == 'cvzone' and ad_password == 'cvzone123':
+                st.success("Welcome Admin")
+                # Display Data
+
+                cursor.execute('''SELECT*FROM user_info''')
+                data = cursor.fetchall()
+                st.header("**User's👨‍💻 Data**")
+                df = pd.DataFrame(data, columns=['ID', 'Name', 'Email', 'Resume Score', 'Timestamp', 'Total Page',
+                                                 'Predicted Field', 'User Level', 'Actual Skills', 'Recommended Skills',
+                                                 'Recommended Course','Predicted_Personality'])
+                st.dataframe(df)
+                st.markdown(get_table_download_link(df,'User_Info.csv','Download Report'), unsafe_allow_html=True)
+                ## Admin Side Data
+                query = 'select * from user_info;'#Change the order of columns resume score and personality
+                plot_data = pd.read_sql(query, connection) #Filter the columns based on the highest resume score - Top 10 - Top 3
+
+                ## Pie chart for predicted field recommendations
+                labels = plot_data.Predicted_Field.unique()
+                print(labels)
+                values = plot_data.Predicted_Field.value_counts()
+                print(values)
+                st.subheader("📈 **Pie-Chart for Predicted Field Recommendations**")
+                fig = px.pie(df, values=values, names=labels, title='Predicted Field according to the Skills')
+                st.plotly_chart(fig)
+
+                ### Pie chart for User's👨‍💻 Experienced Level
+                labels = plot_data.User_level.unique()
+                values = plot_data.User_level.value_counts()
+                st.subheader("📈 ** Pie-Chart for User's👨‍💻 Experienced Level**")
+                fig = px.pie(df, values=values, names=labels, title="Pie-Chart📈 for User's👨‍💻 Experienced Level")
+                st.plotly_chart(fig)
+
+
+            else:
+                st.error("Wrong ID & Password Provided")
+
