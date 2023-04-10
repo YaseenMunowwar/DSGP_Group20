@@ -201,118 +201,307 @@ def score_visualizer(resume_score):
         time.sleep(0.1)
         my_bar.progress(percent_complete + 1)
 
-### Resume score generation based on the Required skills and the skills the candidate has
-st.subheader("**Resume Score💡**")
 
-# The required skill sets for each job role
-data_scientist_required_skills = ['r', 'python', 'machine learning', 'deep learning', 'sql', 'nosql',
-                                  'statistics', 'big data analytics', 'artificial intelligence', 'java', 'rstudio',
-                                  'mathematics', 'hadoop', 'aws', 'cloud computing', 'data pipelines', 'sas',
-                                  'apache spark', 'pig', 'hive', 'google cloud platform ', 'html', 'css', 'javascript',
-                                  'data mining', 'data wrangling', 'data visualization', 'data analysis', 'data management',
-                                  'data mining', 'data processing', 'software development', 'algorithms',
-                                  'natural language processing', 'etl', 'perl', 'scala', 'mongodb',
-                                  'probability', 'tableau', 'power bi', 'qlikview', 'd3.js', 'git',
-                                  'knime', 'business', 'matlab', 'critical thinking', 'decision making',
-                                  'teamwork', 'leadership', 'problem solving', 'communication', 'adaptability']
+def normal_user():
+    # Function to create the functionality of the applicant
 
-software_engineer_required_skills = ['oop', 'python', 'java', 'c++', 'csharp', 'ood', 'flask', 'html',
-                                     'css', 'javascript',  'flutter', 'javafx', 'machine learning', 'ruby',
-                                     'c', 'communication', 'leadership', 'scala', 'powershell', 'php',
-                                     'xml', 'react', 'angular', 'mongodb', 'mysql', 'nosql', 'git', 'junit', 'aws',
-                                     'google cloud platform', 'slack', 'trello', 'asana', 'jenkins', 'circlecl',
-                                     'visual studio code', 'maven', 'decision making', 'critical thinking',
-                                     'problem solving', 'gitlab', 'docker', 'kafka', 'postgresql', 'elasticsearch']
+    'Function to create a dropdown to select the user job role'
+    # Define the job roles and user option
+    job_roles = ["Choose your job role", "Data Scientist", "Software Engineer", "Web Developer",
+                 "Mobile App Developer", "UI/UX Engineer"]
+    # Add a dropdown to select a job role
+    selected_job_role = st.selectbox("Select your job role", job_roles, index=0, key='job_role_selection')
 
-uiux_developer_required_skills = ['ux', 'adobe xd', 'figma', 'zeplin', 'balsamiq', 'ui', 'prototyping',
-                                  'wireframes', 'storyframes', 'adobe photoshop', 'photoshop',
-                                  'editing', 'adobe illustrator', 'illustrator', 'adobe after effects',
-                                  'after effects', 'adobe premier pro', 'adobe indesign',
-                                  'indesign', 'wireframe', 'solid', 'grasp', 'user research', 'css', 'html',
-                                  'javascript', 'sketch', 'adobe xd', 'slack', 'asana', 'jira', 'hotjar',
-                                  'user experience']
+    # Upload user's resume
+    user_resume = st.file_uploader("Choose your Resume", type=["pdf"])
+    # If user's resume is uploaded
+    if user_resume is not None:
+        # Save the uploaded resume
+        with st.spinner('Uploading your Resume....'):
+            time.sleep(2)
+        save_image_path = './Uploaded_Resumes/' + user_resume.name
+        with open(save_image_path, "wb") as f:
+            f.write(user_resume.getbuffer())
 
-web_developer_required_skills = ['react', 'django', 'node jS', 'react js', 'php', 'laravel', 'magento',
-                                 'wordpress', 'javascript', 'angular js', 'c#', 'flask']
+        # Show the uploaded resume
+        show_pdf(save_image_path)
 
-mobile_app_developer_required_skills = ['android', 'android development', 'flutter', 'kotlin', 'xml',
-                                        'kivy', 'ios', 'ios development', 'swift', 'cocoa',
-                                        'cocoa touch', 'xcode']
-# Assigning the number of skills the candidate has and percentage resume score to zero initially
-number_of_skills = 0
-percentage_resume_score = 0
-# Finding the number of skills in the skill lists for each job role and assigning them to variables
-number_of_required_skills_data_scientist = len(data_scientist_required_skills)
-number_of_required_skills_software_engineer = len(software_engineer_required_skills)
-number_of_required_skills_uiux_developer = len(uiux_developer_required_skills)
-number_of_required_skills_web_developer = len(web_developer_required_skills)
-number_of_required_skills_mobile_app_developer = len(mobile_app_developer_required_skills)
-# Calculating the resume score percentage for each job role based on the required skills
-# data scientist job role score calculation
-if selected_field == 'Data Science':
-    # checking each skill extracted during the resume analysis
-    for skills in resume_data['skills']:
-        # checking whether the skill extracted from the resume is in the list of required skills for data science job role
-        if skills.lower() in data_scientist_required_skills:
-            # if so adding 1 to the number of skills
-            number_of_skills = number_of_skills + 1
+        # Extract resume data and skills from the first resume
+        resume_data = ResumeParser(save_image_path).get_extracted_data()
+        if resume_data:
+            resume_text = pdf_reader(save_image_path)
+            resume_data_1_skills = resume_data['skills']
 
-        else:
-            # if the skill is not in the list of the required skills continue
-            number_of_skills = number_of_skills
-    # Calculating the percentage resume score
-    percentage_resume_score = (number_of_skills / number_of_required_skills_data_scientist) * 100
+    # Upload user's LinkedIn CV
+    Linkedin_cv = st.file_uploader("Choose Your LinkedIn CV", type=["pdf"])
+    cover_letter = st.text_area("Please enter you Cover Letter", height=200)
+    if Linkedin_cv is not None and cover_letter.strip() != "":
+        # Save the uploaded LinkedIn CV
+        save_image_path_2 = './Uploaded_Resumes/' + Linkedin_cv.name
+        with open(save_image_path_2, "wb") as f:
+            f.write(Linkedin_cv.getbuffer())
 
-# software engineer job role score calculation
-elif selected_field == 'Software Engineer':
-    # checking each skill extracted during the resume analysis
-    for skills in resume_data['skills']:
-        # checking whether the skill extracted from the resume is in the list of required skills for software engineer job role
-        if skills.lower() in software_engineer_required_skills:
-            # if so adding 1 to the number of skills
-            number_of_skills = number_of_skills + 1
-        else:
-            # if the skill is not in the list of the required skills continue
-            number_of_skills = number_of_skills
-    # Calculating the percentage resume score
-    percentage_resume_score = (number_of_skills / number_of_required_skills_software_engineer) * 100
-# web developer job role score calculation
-elif selected_field == 'Web Development':
-    # checking each skill extracted during the resume analysis
-    for skills in resume_data['skills']:
-        # checking whether the skill extracted from the resume is in the list of required skills for web development job role
-        if skills.lower() in web_developer_required_skills:
-            # if so adding 1 to the number of skills
-            number_of_skills = number_of_skills + 1
-        else:
-            # if the skill is not in the list of the required skills continue
-            number_of_skills = number_of_skills
-    # Calculating the percentage resume score
-    percentage_resume_score = (number_of_skills / number_of_required_skills_web_developer) * 100
+        # Show the uploaded LinkedIn CV
+        show_pdf(save_image_path_2)
 
-#  UI-UX Development job role score calculation
-elif selected_field == 'UI-UX Development':
-    # checking each skill extracted during the resume analysis
-    for skills in resume_data['skills']:
-        # checking whether the skill extracted from the resume is in the list of required skills for ui/ux development job role
-        if skills.lower() in uiux_developer_required_skills:
-            # if so adding 1 to the number of skills
-            number_of_skills = number_of_skills
-        else:
-            # if the skill is not in the list of the required skills continue
-            number_of_skills = number_of_skills
-    # Calculating the percentage resume score
-    percentage_resume_score = (number_of_skills / number_of_required_skills_uiux_developer) * 100
-#  mobile app developer job role score calculation
-elif selected_field == 'Mobile-App Development':
-    # checking each skill extracted during the resume analysis
-    for j in resume_data['skills']:
-        # checking whether the skill extracted from the resume is in the list of required skills for mobile app development job role
-        if j.lower() in mobile_app_developer_required_skills:
-            # if so adding 1 to the number of skills
-            number_of_skills = number_of_skills + 1
-        else:
-            # if the skill is not in the list of the required skills continue
-            number_of_skills = number_of_skills
-    # Calculating the percentage resume score
-    percentage_resume_score = (number_of_skills / number_of_required_skills_mobile_app_developer) * 100
+
+    # Extract skills from the second resume
+        resume_data_2 = ResumeParser(save_image_path_2).get_extracted_data()
+        if resume_data_2:
+            resume_data_2_skills = resume_data_2['skills']
+
+            # Combine the skills from both resumes into a single list
+            all_skills = resume_data_1_skills + resume_data_2_skills
+
+            # Remove the duplicates in the combined skill list
+            all_skills = list(set(all_skills))
+
+            # Convert all skills to lowercase
+            all_skills = [skill.lower() for skill in all_skills]
+
+            # Remove the duplicates in the combined skill list
+            all_skills = list(set(all_skills))
+
+
+            # Display resume analysis
+            st.header("**Resume Analysis**")
+            st.success("Hello " + resume_data['name'])
+            st.subheader("**Your Basic info**")
+            try:
+                st.text('Name: ' + resume_data['name'])
+                st.text('Email: ' + resume_data['email'])
+                st.text('Resume pages: ' + str(resume_data['no_of_pages']))
+            except:
+                st.text("Same CV uploaded")
+                normal_user()  # recursively call the function if the same CV is uploaded again
+
+            #Use the candidate level to get the suitability percentage
+            cand_level = ''
+            if resume_data['no_of_pages'] == 1:
+                cand_level = "Fresher"
+                st.markdown('''<h4 style='text-align: left; color: #d73b5c;'>You are looking Fresher.</h4>''',
+                            unsafe_allow_html=True)
+            elif resume_data['no_of_pages'] == 2:
+                cand_level = "Intermediate"
+                st.markdown('''<h4 style='text-align: left; color: #1ed760;'>You are at intermediate level!</h4>''',
+                            unsafe_allow_html=True)
+            elif resume_data['no_of_pages'] >= 3:
+                cand_level = "Experienced"
+                st.markdown('''<h4 style='text-align: left; color: #fba171;'>You are at experience level!''',
+                            unsafe_allow_html=True)
+
+            # Display the combined list of skills in the st_tags widget
+            keywords = st_tags(label='### Skills that you have',
+                               text='See our skills recommendation',
+                               value=all_skills, key='1')
+
+            cover_letter = st.text_area("Cover Letter", height=200)
+            if (selected_job_role == "Data Scientist"):
+                # Data science recommendations
+                data_scientist_required_skills = ['r', 'python', 'machine learning', 'deep learning', 'sql', 'nosql',
+                                                  'statistics', 'big data analytics', 'artificial intelligence', 'java',
+                                                  'rstudio',
+                                                  'mathematics', 'hadoop', 'aws', 'cloud computing', 'data pipelines',
+                                                  'sas',
+                                                  'apache spark', 'pig', 'hive', 'google cloud platform ', 'html',
+                                                  'css', 'javascript',
+                                                  'data mining', 'data wrangling', 'data visualization',
+                                                  'data analysis', 'data management',
+                                                  'data mining', 'data processing', 'software development',
+                                                  'algorithms',
+                                                  'natural language processing', 'etl', 'perl', 'scala', 'mongodb',
+                                                  'probability', 'tableau', 'power bi', 'qlikview', 'd3.js', 'git',
+                                                  'knime', 'business', 'matlab', 'critical thinking', 'decision making',
+                                                  'teamwork', 'leadership', 'problem solving', 'communication',
+                                                  'adaptability']
+                resume_score = skill_percentage(data_scientist_required_skills,all_skills)
+                score_visualizer(resume_score)
+                recommended_skills = skill_recommender(data_scientist_required_skills, all_skills)
+                recommended_keywords = st_tags(label='### Recommended skills for you.',
+                                               text='Recommended skills generated from System',
+                                               value=recommended_skills, key='2')
+                st.write(f"Selected job role: {selected_job_role}")
+                rec_course = course_recommender(ds_course)
+
+            elif (selected_job_role == "Software Engineer"):
+                # Software Engineer recommendations
+                software_engineer_required_skills = ['oop', 'python', 'java', 'c++', 'csharp', 'ood', 'flask', 'html',
+                                                     'css', 'javascript', 'flutter', 'javafx', 'machine learning',
+                                                     'ruby',
+                                                     'c', 'communication', 'leadership', 'scala', 'powershell', 'php',
+                                                     'xml', 'react', 'angular', 'mongodb', 'mysql', 'nosql', 'git',
+                                                     'junit', 'aws',
+                                                     'google cloud platform', 'slack', 'trello', 'asana', 'jenkins',
+                                                     'circlecl',
+                                                     'visual studio code', 'maven', 'decision making',
+                                                     'critical thinking',
+                                                     'problem solving', 'gitlab', 'docker', 'kafka', 'postgresql',
+                                                     'elasticsearch']
+
+                resume_score = skill_percentage(software_engineer_required_skills, all_skills)
+                score_visualizer(resume_score)
+                recommended_skills = skill_recommender(software_engineer_required_skills, all_skills)
+                recommended_keywords = st_tags(label='### Recommended skills for you.',
+                                               text='Recommended skills generated from System',
+                                               value=recommended_skills, key='3')
+                st.write(f"Selected job role: {selected_job_role}")
+                #rec_course = course_recommender(software_course)
+
+            elif (selected_job_role == "Web Developer"):
+                # Web Developer recommendations
+                web_developer_required_skills = ['react', 'django', 'node jS', 'react js', 'php', 'laravel', 'magento',
+                                                 'wordpress', 'javascript', 'angular js', 'c#', 'flask']
+                resume_score = skill_percentage(web_developer_required_skills, all_skills)
+                score_visualizer(resume_score)
+                recommended_skills = skill_recommender(web_developer_required_skills, all_skills)
+                recommended_keywords = st_tags(label='### Recommended skills for you.',
+                                               text='Recommended skills generated from System',
+                                               value=recommended_skills, key='3')
+                st.write(f"Selected job role: {selected_job_role}")
+                rec_course = course_recommender(web_course)
+
+            elif (selected_job_role == "Mobile App Developer"):
+                # Mobile App Developer recommendations
+                mobile_app_developer_required_skills = ['android', 'android development', 'flutter', 'kotlin', 'xml',
+                                                        'kivy', 'ios', 'ios development', 'swift', 'cocoa',
+                                                        'cocoa touch', 'xcode']
+                resume_score = skill_percentage(mobile_app_developer_required_skills, all_skills)
+                score_visualizer(resume_score)
+                recommended_skills = skill_recommender(mobile_app_developer_required_skills, all_skills)
+                recommended_keywords = st_tags(label='### Recommended skills for you.',
+                                               text='Recommended skills generated from System',
+                                               value=recommended_skills, key='3')
+                st.write(f"Selected job role: {selected_job_role}")
+                rec_course = course_recommender(android_course)
+
+            elif (selected_job_role == "UI/UX Engineer"):
+                # UI/UX Engineer recommendations
+
+                uiux_developer_required_skills = ['ux', 'adobe xd', 'figma', 'zeplin', 'balsamiq', 'ui', 'prototyping',
+                                                  'wireframes', 'storyframes', 'adobe photoshop', 'photoshop',
+                                                  'editing', 'adobe illustrator', 'illustrator', 'adobe after effects',
+                                                  'after effects', 'adobe premier pro', 'adobe indesign',
+                                                  'indesign', 'wireframe', 'solid', 'grasp', 'user research', 'css',
+                                                  'html',
+                                                  'javascript', 'sketch', 'adobe xd', 'slack', 'asana', 'jira',
+                                                  'hotjar',
+                                                  'user experience']
+
+                resume_score = skill_percentage(uiux_developer_required_skills, all_skills)
+                score_visualizer(resume_score)
+                recommended_skills = skill_recommender(uiux_developer_required_skills, all_skills)
+                recommended_keywords = st_tags(label='### Recommended skills for you.',
+                                               text='Recommended skills generated from System',
+                                               value=recommended_skills, key='3')
+                st.write(f"Selected job role: {selected_job_role}")
+                rec_course = course_recommender(uiux_course)
+
+            ## Insert into table
+            ts = time.time()
+            cur_date = datetime.datetime.fromtimestamp(ts).strftime('%Y-%m-%d')
+            cur_time = datetime.datetime.fromtimestamp(ts).strftime('%H:%M:%S')
+            timestamp = str(cur_date + '_' + cur_time)
+
+            ### Resume writing recommendation
+            st.subheader("**Resume Tips & Ideas💡**")
+
+            st.subheader("**Resume Score📝**")
+            st.markdown(
+                """
+                <style>
+                    .stProgress > div > div > div > div {
+                        background-color: #d73b5c;
+                    }
+                </style>""",
+                unsafe_allow_html=True,
+            )
+
+            data = pd.read_csv("mbti_1.csv")
+            data = data.join(data.apply(lambda row: get_types(row), axis=1))
+
+            list_personality_bin = np.array([translate_personality(p) for p in data.type])
+
+            list_posts, list_personality = pre_process_text(data, remove_stop_words=True, remove_mbti_profiles=True)
+
+            cntizer = CountVectorizer(analyzer="word",
+                                      max_features=1000,
+                                      max_df=0.7,
+                                      min_df=0.1)
+            # the feature should be made of word n-gram
+            # Learn the vocabulary dictionary and return term-document matrix
+            X_cnt = cntizer.fit_transform(list_posts)
+
+            # The enumerate object yields pairs containing a count and a value (useful for obtaining an indexed list)
+            feature_names = list(enumerate(cntizer.get_feature_names()))
+
+            # For the Standardization or Feature Scaling Stage :-
+            # Transform the count matrix to a normalized tf or tf-idf representation
+            tfizer = TfidfTransformer()
+
+            # Learn the idf vector (fit) and transform a count matrix to a tf-idf representation
+
+            X_tfidf = tfizer.fit_transform(X_cnt).toarray()
+            print(X_tfidf.shape)
+
+            personality_type = ["IE: Introversion (I) / Extroversion (E)", "NS: Intuition (N) / Sensing (S)",
+                                "FT: Feeling (F) / Thinking (T)", "JP: Judging (J) / Perceiving (P)"]
+
+            for l in range(len(personality_type)):
+                print(personality_type[l])
+
+            # Posts in tf-idf representation
+            X = X_tfidf
+            my_posts = """Highly motivated and detail-oriented data science student with a strong academic
+                        background in mathematics and computer science. Proficient in Python, R, SQL, Azure and
+                        always keen to learn new technologies and tools from the latest tech stacks. Seeking an
+                        internship in the data science field to apply skills and knowledge gained from coursework and
+                        projects."""
+            # The type is just a dummy so that the data prep function can be reused
+            mydata = pd.DataFrame(data={'type': ['INFJ'], 'posts': [my_posts]})
+
+            my_posts, dummy = pre_process_text(mydata, remove_stop_words=True, remove_mbti_profiles=True)
+
+            my_X_cnt = cntizer.transform(my_posts)
+            my_X_tfidf = tfizer.transform(my_X_cnt).toarray()
+
+
+            import pickle
+
+            # load the saved model from a file
+            filename = 'xgb_model1.pkl'
+            with open(filename, 'rb') as file:
+                model = pickle.load(file)
+
+            my_posts = str (cover_letter)
+
+            # The type is just a dummy so that the data prep function can be reused
+            mydata = pd.DataFrame(data={'type': ['INFJ'], 'posts': [my_posts]})
+
+            my_posts, dummy = pre_process_text(mydata, remove_stop_words=True, remove_mbti_profiles=True)
+
+            my_X_cnt = cntizer.transform(my_posts)
+            my_X_tfidf = tfizer.transform(my_X_cnt).toarray()
+
+            final_result = []
+            # Individually training each mbti personlity type
+            for l in range(len(personality_type)):
+                print("%s classifier trained" % (personality_type[l]))
+                # make predictions on the new data using the loaded model
+                predictions = model.predict(my_X_tfidf)
+                final_result.append(predictions[0])
+
+            print("The result is: ", translate_back(final_result))
+
+            # Add a text box for the user to enter the cover letter
+            personality = (translate_back(final_result))
+            st.write(f"Predicted Personality: {personality}")
+
+        insert_data(resume_data['name'], resume_data['email'], str(resume_score), timestamp,
+                str(resume_data['no_of_pages']), selected_job_role, cand_level, str(resume_data['skills']),
+                str(recommended_skills), str(rec_course),str(personality))
+        print(resume_data['name'])
+        print(resume_data['email'])
+        print(resume_score)
+        print(timestamp)
+        connection.commit()
+        st.write ('Commited to database successfully!')
